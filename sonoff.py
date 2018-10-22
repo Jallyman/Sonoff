@@ -14,7 +14,7 @@ def on_message(client, userdata, message):
     ''' note: message is a tuple of (topic, payload, qos, retain)'''
     global last_topic, last_payload
     last_topic = message.topic
-    last_payload = message.payload
+    last_payload = str(message.payload)
     print("Got a message with topic: [" + last_topic + "] and payload [" + last_payload + "]")
 
 client = mqtt.Client()
